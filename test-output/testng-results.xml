@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="190751" started-at="2017-09-20T18:46:08Z" finished-at="2017-09-20T18:49:19Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="190751" started-at="2017-09-20T18:46:08Z" finished-at="2017-09-20T18:49:19Z">
+      <class name="amazon_DDT_test.DDT_test">
+        <test-method status="PASS" signature="basePageNavigation(java.lang.String, java.lang.String)[pri:0, instance:amazon_DDT_test.DDT_test@527740a2]" name="basePageNavigation" duration-ms="66227" started-at="2017-09-21T00:16:09Z" data-provider="getDataSign" finished-at="2017-09-21T00:17:15Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[appumuv@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Anushka19915]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- basePageNavigation -->
+        <test-method status="PASS" signature="basePageNavigation(java.lang.String, java.lang.String)[pri:0, instance:amazon_DDT_test.DDT_test@527740a2]" name="basePageNavigation" duration-ms="50384" started-at="2017-09-21T00:17:15Z" data-provider="getDataSign" finished-at="2017-09-21T00:18:06Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[abc@abc.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[abc]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- basePageNavigation -->
+        <test-method status="PASS" signature="basePageNavigation(java.lang.String, java.lang.String)[pri:0, instance:amazon_DDT_test.DDT_test@527740a2]" name="basePageNavigation" duration-ms="73016" started-at="2017-09-21T00:18:06Z" data-provider="getDataSign" finished-at="2017-09-21T00:19:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[123@113.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[123.0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- basePageNavigation -->
+      </class> <!-- amazon_DDT_test.DDT_test -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
