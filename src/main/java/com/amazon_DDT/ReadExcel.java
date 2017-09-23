@@ -44,6 +44,12 @@ public class ReadExcel {
 	}
 	public static void main(String[] args) throws Exception {
 		System.out.println(testData("TestData.xlsx", "Sheet1"));
+		Object[][] object = testData("TestData.xlsx", "Sheet1");
+		System.out.println("######  Inside Main Class  #######");
+		for (Object[] objects : object) {
+			Map<String, String> map=(Map<String, String>) objects[0];
+			System.out.println(map);
+		}
 	}
   public static Object[][] testData(String Path, String SheetName) throws Exception
   {
@@ -70,7 +76,6 @@ public class ReadExcel {
 		  	map=new HashMap<String, String>(); // row 
 		  	for (int j=0;j<colNUM;j++)
 		  	{
-		  		
 		  //map.put(cellValue(0,j),cellvaule(i,j) //1st Iteration username>appuv,pass>anus,pro>a
 		  // 2nd Iteration   username>123,pass>abc,pro>b
 			//map.put(ReadExcel.getCellData(SheetName, j,0), ReadExcel.getCellData(SheetName, j,i));
