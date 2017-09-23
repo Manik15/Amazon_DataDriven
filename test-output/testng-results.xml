@@ -1,48 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="851" started-at="2017-09-23T14:27:35Z" finished-at="2017-09-23T14:27:36Z">
+  <suite name="Default suite" duration-ms="32795" started-at="2017-09-23T18:16:32Z" finished-at="2017-09-23T18:17:05Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="851" started-at="2017-09-23T14:27:35Z" finished-at="2017-09-23T14:27:36Z">
+    <test name="Default test" duration-ms="32795" started-at="2017-09-23T18:16:32Z" finished-at="2017-09-23T18:17:05Z">
       <class name="amazon_DDT_test.DDT_test">
-        <test-method status="FAIL" signature="basePageNavigation(java.util.Map)[pri:0, instance:amazon_DDT_test.DDT_test@4f7d0008]" name="basePageNavigation" duration-ms="805" started-at="2017-09-23T19:57:35Z" data-provider="getDataSign" finished-at="2017-09-23T19:57:36Z">
-          <exception class="org.testng.internal.reflect.MethodMatcherException">
-            <message>
-              <![CDATA[
-Data provider mismatch
-Method: basePageNavigation([Parameter{index=0, type=java.util.Map, declaredAnnotations=[]}])
-Arguments: [(java.util.HashMap) {row 1 or column 2 does not exist  in Excel=row 1 or column 2 does not exist  in Excel, Anushka19915=Anushka19915, appumuv@gmail.com=appumuv@gmail.com},(java.util.HashMap) {row 1 or column 2 does not exist  in Excel=row 1 or column 2 does not exist  in Excel, Anushka19915=Anushka19915, appumuv@gmail.com=appumuv@gmail.com},(java.util.HashMap) {row 1 or column 2 does not exist  in Excel=row 1 or column 2 does not exist  in Excel, Anushka19915=Anushka19915, appumuv@gmail.com=appumuv@gmail.com}]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.internal.reflect.MethodMatcherException: 
-Data provider mismatch
-Method: basePageNavigation([Parameter{index=0, type=java.util.Map, declaredAnnotations=[]}])
-Arguments: [(java.util.HashMap) {row 1 or column 2 does not exist  in Excel=row 1 or column 2 does not exist  in Excel, Anushka19915=Anushka19915, appumuv@gmail.com=appumuv@gmail.com},(java.util.HashMap) {row 1 or column 2 does not exist  in Excel=row 1 or column 2 does not exist  in Excel, Anushka19915=Anushka19915, appumuv@gmail.com=appumuv@gmail.com},(java.util.HashMap) {row 1 or column 2 does not exist  in Excel=row 1 or column 2 does not exist  in Excel, Anushka19915=Anushka19915, appumuv@gmail.com=appumuv@gmail.com}]
-	at org.testng.internal.reflect.DataProviderMethodMatcher.getConformingArguments(DataProviderMethodMatcher.java:45)
-	at org.testng.internal.Invoker.injectParameters(Invoker.java:1301)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1195)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:776)
-	at org.testng.TestRunner.run(TestRunner.java:634)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:425)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:420)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:385)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:334)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1318)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1243)
-	at org.testng.TestNG.runSuites(TestNG.java:1161)
-	at org.testng.TestNG.run(TestNG.java:1129)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.internal.reflect.MethodMatcherException -->
+        <test-method status="PASS" signature="basePageNavigation(java.util.Map)[pri:0, instance:amazon_DDT_test.DDT_test@9838eb]" name="basePageNavigation" duration-ms="12434" started-at="2017-09-23T23:46:33Z" data-provider="getDataSign" finished-at="2017-09-23T23:46:45Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Product=A, Username=appumuv@gmail.com, Password=Anushka19915}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- basePageNavigation -->
+        <test-method status="PASS" signature="basePageNavigation(java.util.Map)[pri:0, instance:amazon_DDT_test.DDT_test@9838eb]" name="basePageNavigation" duration-ms="9831" started-at="2017-09-23T23:46:45Z" data-provider="getDataSign" finished-at="2017-09-23T23:46:55Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Product=B, Username=abc@abc.com, Password=abc}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- basePageNavigation -->
+        <test-method status="PASS" signature="basePageNavigation(java.util.Map)[pri:0, instance:amazon_DDT_test.DDT_test@9838eb]" name="basePageNavigation" duration-ms="9806" started-at="2017-09-23T23:46:55Z" data-provider="getDataSign" finished-at="2017-09-23T23:47:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Product=C, Username=123@113.com, Password=123}]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- basePageNavigation -->
