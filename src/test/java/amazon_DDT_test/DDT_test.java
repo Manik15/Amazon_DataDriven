@@ -22,14 +22,14 @@ public class DDT_test extends Base_DDT
 		Amazon_Homepage cu= new Amazon_Homepage(driver);
 		//cu.createUser();
 		
-		String User=map.get("userName");
-		String Pass=map.get("password");
+		String userName=map.get("userName");
+		String password=map.get("password");
 		
+		System.out.println(userName+" > "+password);
 		//System.out.println(User);
-		//cu.userSignIn(userName, password);
+		cu.userSignIn(userName, password);
 		
 		
-	
 	}
 	
 	//@DataProvider

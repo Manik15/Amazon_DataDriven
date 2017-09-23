@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Default_suite">
-              <span class="suite-name border-failed">Default suite</span>
+              <span class="suite-name border-passed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\Manikantan\AppData\Local\Temp\testng-eclipse--1767684694\testng-customsuite.xml</span>
+                    <span>C:\Users\rvarghes\AppData\Local\Temp\testng-eclipse-147402024\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,21 +91,31 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method, 1 failed,   </span>
+                    <span class="method-stats">3 methods,   3 passed</span>
                   </li>
                   <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
-                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods passed suite-Default_suite"> (hide)</a> <!-- hide-methods passed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
                     </span>
-                    <div class="method-list-content failed suite-Default_suite">
+                    <div class="method-list-content passed suite-Default_suite">
                       <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="amazon_DDT_test.DDT_test" hash-for-method="basePageNavigation">basePageNavigation</a> <!-- method navigator-link -->
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="amazon_DDT_test.DDT_test" hash-for-method="basePageNavigation({Product=C, Username=123@113.com, Password=123})">basePageNavigation({Product=C, Username=123@113.com, Password=123})</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content failed suite-Default_suite -->
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="amazon_DDT_test.DDT_test" hash-for-method="basePageNavigation({Product=A, Username=appumuv@gmail.com, Password=Anushka19915})">basePageNavigation({Product=A, Username=appumuv@gmail.com, Password=Anushka19915})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="amazon_DDT_test.DDT_test" hash-for-method="basePageNavigation({Product=B, Username=abc@abc.com, Password=abc})">basePageNavigation({Product=B, Username=abc@abc.com, Password=abc})</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Default_suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -117,51 +127,42 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-failed">
+          <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
+              <img src="passed.png"/>
               <span class="class-name">amazon_DDT_test.DDT_test</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="basePageNavigation">
-                  </a> <!-- basePageNavigation -->
+                  <a name="basePageNavigation({Product=C, Username=123@113.com, Password=123})">
+                  </a> <!-- basePageNavigation({Product=C, Username=123@113.com, Password=123}) -->
                   <span class="method-name">basePageNavigation</span>
-                  <div class="stack-trace">org.testng.internal.reflect.MethodMatcherException: 
-Data provider mismatch
-Method: basePageNavigation([Parameter{index=0, type=java.util.Map, declaredAnnotations=[]}])
-Arguments: [(java.util.HashMap) {row 1 or column 2 does not exist  in Excel=row 1 or column 2 does not exist  in Excel, Anushka19915=Anushka19915, appumuv@gmail.com=appumuv@gmail.com},(java.util.HashMap) {row 1 or column 2 does not exist  in Excel=row 1 or column 2 does not exist  in Excel, Anushka19915=Anushka19915, appumuv@gmail.com=appumuv@gmail.com},(java.util.HashMap) {row 1 or column 2 does not exist  in Excel=row 1 or column 2 does not exist  in Excel, Anushka19915=Anushka19915, appumuv@gmail.com=appumuv@gmail.com}]
-	at org.testng.internal.reflect.DataProviderMethodMatcher.getConformingArguments(DataProviderMethodMatcher.java:45)
-	at org.testng.internal.Invoker.injectParameters(Invoker.java:1301)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1195)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:776)
-	at org.testng.TestRunner.run(TestRunner.java:634)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:425)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:420)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:385)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:334)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1318)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1243)
-	at org.testng.TestNG.runSuites(TestNG.java:1161)
-	at org.testng.TestNG.run(TestNG.java:1129)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-
-</div> <!-- stack-trace -->
+                  <span class="parameters">({Product=C, Username=123@113.com, Password=123})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="basePageNavigation({Product=A, Username=appumuv@gmail.com, Password=Anushka19915})">
+                  </a> <!-- basePageNavigation({Product=A, Username=appumuv@gmail.com, Password=Anushka19915}) -->
+                  <span class="method-name">basePageNavigation</span>
+                  <span class="parameters">({Product=A, Username=appumuv@gmail.com, Password=Anushka19915})</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="basePageNavigation({Product=B, Username=abc@abc.com, Password=abc})">
+                  </a> <!-- basePageNavigation({Product=B, Username=abc@abc.com, Password=abc}) -->
+                  <span class="method-name">basePageNavigation</span>
+                  <span class="parameters">({Product=B, Username=abc@abc.com, Password=abc})</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Default_suite-class-failed -->
+          </div> <!-- suite-Default_suite-class-passed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Manikantan\AppData\Local\Temp\testng-eclipse--1767684694\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\rvarghes\AppData\Local\Temp\testng-eclipse-147402024\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -210,16 +211,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(3);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'basePageNavigation')
 data.setCell(0, 2, 'amazon_DDT_test.DDT_test')
-data.setCell(0, 3, 805);
+data.setCell(0, 3, 12434);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'basePageNavigation')
+data.setCell(1, 2, 'amazon_DDT_test.DDT_test')
+data.setCell(1, 3, 9831);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'basePageNavigation')
+data.setCell(2, 2, 'amazon_DDT_test.DDT_test')
+data.setCell(2, 3, 9806);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 805 ms</span>
+              <span class="suite-total-time">Total running time: 32 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -244,6 +253,20 @@ return data;
             <span class="header-content">Methods in chronological order</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">amazon_DDT_test.DDT_test</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">basePageNavigation({Product=A, Username=appumuv@gmail.com, Password=Anushka19915})</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">basePageNavigation({Product=B, Username=abc@abc.com, Password=abc})</span>
+                <span class="method-start">12435 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">basePageNavigation({Product=C, Username=123@113.com, Password=123})</span>
+                <span class="method-start">22267 ms</span>
+              </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

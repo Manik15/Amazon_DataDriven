@@ -43,7 +43,6 @@ public class ReadExcel {
 		excelFile.close();
 	}
 	public static void main(String[] args) throws Exception {
-		System.out.println(testData("TestData.xlsx", "Sheet1"));
 		Object[][] object = testData("TestData.xlsx", "Sheet1");
 		System.out.println("######  Inside Main Class  #######");
 		for (Object[] objects : object) {
@@ -69,7 +68,7 @@ public class ReadExcel {
 		 // key=column header
 		  XSSFRow headerRow = excelSheet.getRow(0);
 		  Map<String, String> map=null;
-		  excelData= new Object[rowNUM-1][colNUM];
+		  excelData= new Object[rowNUM-1][1];
 		  for(int i=1;i<rowNUM;i++)
 		  {
 			row= excelSheet.getRow(i);
@@ -79,8 +78,8 @@ public class ReadExcel {
 		  //map.put(cellValue(0,j),cellvaule(i,j) //1st Iteration username>appuv,pass>anus,pro>a
 		  // 2nd Iteration   username>123,pass>abc,pro>b
 			//map.put(ReadExcel.getCellData(SheetName, j,0), ReadExcel.getCellData(SheetName, j,i));
-		  	String headerCellValue=headerRow.getCell(j).getStringCellValue();
-		  	String rowCellValue=row.getCell(j).getStringCellValue();
+		  	String headerCellValue=getCellData(headerRow.getCell(j));//headerRow.getCell(j).getStringCellValue();
+		  	String rowCellValue=getCellData(row.getCell(j));
 			map.put(headerCellValue, rowCellValue);
 		  	}
 		  	System.out.println("map>"+map);
@@ -114,7 +113,43 @@ public class ReadExcel {
 	
   }
   
-  private static ArrayList<String> getcolNames(String sheetName) {
+  private static String getCellData(XSSFCell cell) {
+
+      try
+      {
+          if(cell.getCellTypeEnum() == CellType.STRING)
+              return cell.getStringCellValue();
+          
+          //map.put(ReadExcel.getCellData(SheetName,0,j), ReadExcel.getCellData(SheetName, i, j));
+          else if(cell.getCellTypeEnum() == CellType.NUMERIC || cell.getCellTypeEnum() == CellType.STRING)
+          {
+              String cellValue  = String.valueOf(cell.getNumericCellValue());
+              if (HSSFDateUtil.isCellDateFormatted(cell))
+              {
+                  DateFormat df = new SimpleDateFormat("dd/MM/yy");
+                  Date date = cell.getDateCellValue();
+                  cellValue = df.format(date);
+              }
+              return cellValue;
+          }
+          
+          else if(cell.getCellTypeEnum() == CellType.BLANK)
+              return "";
+          else
+          {
+              return String.valueOf(cell.getBooleanCellValue());
+          }
+          
+      }
+      
+      catch(Exception e)
+      {
+    	  return " ";
+      }
+  
+  }
+
+private static ArrayList<String> getcolNames(String sheetName) {
 	// TODO Auto-generated method stub
 	  excelSheet = WB.getSheet(sheetName);
       row = excelSheet.getRow(0);
