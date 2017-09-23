@@ -1,5 +1,6 @@
 package com.amazon_DDT;
 
+import java.awt.List;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -30,7 +31,6 @@ public class ReadExcel {
 	public static XSSFCell cell=null;
 	public static XSSFRow row=null;
 	public static MissingCellPolicy Row;
-	public static XSSFRow row1=null;
 	String Path;
 	
 	
@@ -40,45 +40,46 @@ public class ReadExcel {
 		this.Path= Path;
 		excelFile= new FileInputStream(Path);
 		WB= new XSSFWorkbook(excelFile);
-		
 		excelFile.close();
+	}
+	public static void main(String[] args) throws Exception {
+		System.out.println(testData("TestData.xlsx", "Sheet1"));
 	}
   public static Object[][] testData(String Path, String SheetName) throws Exception
   {
 	  try {
-		  
+		  ReadExcel re= new ReadExcel(Path);
 		  excelSheet = WB.getSheet(SheetName);
 		  System.out.println(Path);
 		  Object[][] excelData=null;
-		  ReadExcel RE= new ReadExcel(Path);
-		  int rowNUM= RE.getRowCount(SheetName);
-		  int colNUM= RE.getColumnCount(SheetName);
+		  int rowNUM= re.getRowCount(SheetName);
+		  int colNUM= re.getColumnCount(SheetName);
 		  ArrayList<String> colNames=null;
 		  
-		  System.out.println(rowNUM);
-		  System.out.println(colNUM);
+		  System.out.println("rowNUM"+rowNUM);
+		  System.out.println("colNUM "+colNUM);
 		  //colNames= getcolNames(SheetName);
 		  
 		 // key=column header
-		  
-		  Map<String, Object> map=null;
+		  XSSFRow headerRow = excelSheet.getRow(0);
+		  Map<String, String> map=null;
 		  excelData= new Object[rowNUM-1][colNUM];
 		  for(int i=1;i<rowNUM;i++)
 		  {
-			row1= excelSheet.getRow(i);
-		  	map=new HashMap<String, Object>(rowNUM); // row 
+			row= excelSheet.getRow(i);
+		  	map=new HashMap<String, String>(); // row 
 		  	for (int j=0;j<colNUM;j++)
 		  	{
 		  		
 		  //map.put(cellValue(0,j),cellvaule(i,j) //1st Iteration username>appuv,pass>anus,pro>a
 		  // 2nd Iteration   username>123,pass>abc,pro>b
 			//map.put(ReadExcel.getCellData(SheetName, j,0), ReadExcel.getCellData(SheetName, j,i));
-			map.put(colNUM., value)
-			
-			System.out.println(map);
-			excelData[i-1][j]=map;
-			  
+		  	String headerCellValue=headerRow.getCell(j).getStringCellValue();
+		  	String rowCellValue=row.getCell(j).getStringCellValue();
+			map.put(headerCellValue, rowCellValue);
 		  	}
+		  	System.out.println("map>"+map);
+		  	excelData[i-1][0]=map;
 		  }
 		  
 		  
@@ -120,7 +121,7 @@ public class ReadExcel {
     	  for(int j=0;j<ReadExcel.getColumnCount(sheetName);j++)
     	  {
     		  XSSFCell columncell = row.getCell(j);
-    		  columnNames= columncell.
+    		  //columnNames= columncell.
     	  }
       
       //columnNames= row.getCell(0).getRichStringCellValue().toString().to;
