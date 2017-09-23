@@ -43,7 +43,7 @@ public class ReadExcel {
 		excelFile.close();
 	}
 	public static void main(String[] args) throws Exception {
-		System.out.println(testData("TestData.xlsx", "Sheet1"));
+		
 		Object[][] object = testData("TestData.xlsx", "Sheet1");
 		System.out.println("######  Inside Main Class  #######");
 		for (Object[] objects : object) {
