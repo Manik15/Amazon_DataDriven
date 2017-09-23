@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -29,6 +30,7 @@ public class ReadExcel {
 	public static XSSFCell cell=null;
 	public static XSSFRow row=null;
 	public static MissingCellPolicy Row;
+	public static XSSFRow row1=null;
 	String Path;
 	
 	
@@ -38,35 +40,40 @@ public class ReadExcel {
 		this.Path= Path;
 		excelFile= new FileInputStream(Path);
 		WB= new XSSFWorkbook(excelFile);
+		
 		excelFile.close();
 	}
   public static Object[][] testData(String Path, String SheetName) throws Exception
   {
 	  try {
 		  
-		  
+		  excelSheet = WB.getSheet(SheetName);
 		  System.out.println(Path);
 		  Object[][] excelData=null;
 		  ReadExcel RE= new ReadExcel(Path);
 		  int rowNUM= RE.getRowCount(SheetName);
 		  int colNUM= RE.getColumnCount(SheetName);
+		  ArrayList<String> colNames=null;
 		  
 		  System.out.println(rowNUM);
 		  System.out.println(colNUM);
-		  
+		  //colNames= getcolNames(SheetName);
 		  
 		 // key=column header
 		  
-		  Map<String, String> map=null;
+		  Map<String, Object> map=null;
 		  excelData= new Object[rowNUM-1][colNUM];
 		  for(int i=1;i<rowNUM;i++)
 		  {
-		  	map=new HashMap<String, String>(); // row 
+			row1= excelSheet.getRow(i);
+		  	map=new HashMap<String, Object>(rowNUM); // row 
 		  	for (int j=0;j<colNUM;j++)
 		  	{
+		  		
 		  //map.put(cellValue(0,j),cellvaule(i,j) //1st Iteration username>appuv,pass>anus,pro>a
 		  // 2nd Iteration   username>123,pass>abc,pro>b
-			map.put(ReadExcel.getCellData(SheetName, j,0), ReadExcel.getCellData(SheetName, j,i));
+			//map.put(ReadExcel.getCellData(SheetName, j,0), ReadExcel.getCellData(SheetName, j,i));
+			map.put(colNUM., value)
 			
 			System.out.println(map);
 			excelData[i-1][j]=map;
@@ -101,7 +108,26 @@ public class ReadExcel {
 	
   }
   
-  private int getRowCount(String sheetName) {
+  private static ArrayList<String> getcolNames(String sheetName) {
+	// TODO Auto-generated method stub
+	  excelSheet = WB.getSheet(sheetName);
+      row = excelSheet.getRow(0);
+      ArrayList<String> columnNames=null;
+      
+//      cell.getSheet().getRow(0).getCell(currentcellIndex)
+//      .getRichStringCellValue().toString()
+      
+    	  for(int j=0;j<ReadExcel.getColumnCount(sheetName);j++)
+    	  {
+    		  XSSFCell columncell = row.getCell(j);
+    		  columnNames= columncell.
+    	  }
+      
+      //columnNames= row.getCell(0).getRichStringCellValue().toString().to;
+	  
+	return columnNames;
+}
+public int getRowCount(String sheetName) {
 	
 	  System.out.println(WB);
 	  excelSheet= WB.getSheet(sheetName);
@@ -109,7 +135,7 @@ public class ReadExcel {
 	  int rowCount= excelSheet.getLastRowNum()+1;
 	return rowCount;
 }
-public int getColumnCount(String sheetName)
+public static int getColumnCount(String sheetName)
   {
       excelSheet = WB.getSheet(sheetName);
       row = excelSheet.getRow(0);
