@@ -1,6 +1,7 @@
 package amazon_DDT_test;
 
 import java.io.IOException;
+import java.util.Map;
 
 import org.testng.annotations.Test;
 
@@ -11,16 +12,22 @@ public class DDT_test extends Base_DDT
 
 	
 	@Test(dataProvider="getDataSign",dataProviderClass=Base_DDT.class)
-	public void basePageNavigation(String userName, String password) throws IOException
+	public void basePageNavigation(Map<String,String> map) throws IOException
 	{
-		System.out.println(userName);
+		//System.out.println(userName);
 		driver=initialize();
 		//driver.get(baseURL);
 		driver.manage().window().maximize();
 		
 		Amazon_Homepage cu= new Amazon_Homepage(driver);
 		//cu.createUser();
-		cu.userSignIn(userName, password);
+		
+		String User=map.get("userName");
+		String Pass=map.get("password");
+		
+		//System.out.println(User);
+		//cu.userSignIn(userName, password);
+		
 		
 	
 	}

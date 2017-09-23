@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.poi.hssf.usermodel.HSSFDateUtil;
 import org.apache.poi.ss.usermodel.Cell;
@@ -52,17 +54,44 @@ public class ReadExcel {
 		  System.out.println(rowNUM);
 		  System.out.println(colNUM);
 		  
-		  excelData= new Object[rowNUM-1][colNUM];
 		  
-		  for(int i=1; i<rowNUM;i++)
+		 // key=column header
+		  
+		  Map<String, String> map=null;
+		  excelData= new Object[rowNUM-1][colNUM];
+		  for(int i=1;i<rowNUM;i++)
 		  {
-			  for(int j=0;j<colNUM;j++)
-			  {
-				  excelData[i-1][j]= ReadExcel.getCellData(SheetName, j, i);
-			  }
+		  	map=new HashMap<String, String>(); // row 
+		  	for (int j=0;j<colNUM;j++)
+		  	{
+		  //map.put(cellValue(0,j),cellvaule(i,j) //1st Iteration username>appuv,pass>anus,pro>a
+		  // 2nd Iteration   username>123,pass>abc,pro>b
+			map.put(ReadExcel.getCellData(SheetName, j,0), ReadExcel.getCellData(SheetName, j,i));
+			
+			System.out.println(map);
+			excelData[i-1][j]=map;
+			  
+		  	}
 		  }
-	  
+		  
+		  
 		  return excelData;
+		  
+		  
+		  
+		  
+		  
+//		  excelData= new Object[rowNUM-1][colNUM];
+//		  
+//		  for(int i=1; i<rowNUM;i++)
+//		  {
+//			  for(int j=0;j<colNUM;j++)
+//			  {
+//				  excelData[i-1][j]= ReadExcel.getCellData(SheetName, j, i);
+//			  }
+//		  }
+	  
+		 // return excelData;
 	  }
 	  catch(Exception e)
 	  {
@@ -104,6 +133,8 @@ public int getColumnCount(String sheetName)
           
           if(cell.getCellTypeEnum() == CellType.STRING)
               return cell.getStringCellValue();
+          
+          //map.put(ReadExcel.getCellData(SheetName,0,j), ReadExcel.getCellData(SheetName, i, j));
           else if(cell.getCellTypeEnum() == CellType.NUMERIC || cell.getCellTypeEnum() == CellType.STRING)
           {
               String cellValue  = String.valueOf(cell.getNumericCellValue());
