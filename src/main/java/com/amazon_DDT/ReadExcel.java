@@ -43,11 +43,14 @@ public class ReadExcel {
 	  try {
 		  
 		  
-		  System.out.println("Hello change");
+		  System.out.println(Path);
 		  Object[][] excelData=null;
 		  ReadExcel RE= new ReadExcel(Path);
 		  int rowNUM= RE.getRowCount(SheetName);
 		  int colNUM= RE.getColumnCount(SheetName);
+		  
+		  System.out.println(rowNUM);
+		  System.out.println(colNUM);
 		  
 		  excelData= new Object[rowNUM-1][colNUM];
 		  
@@ -99,9 +102,9 @@ public int getColumnCount(String sheetName)
           row = excelSheet.getRow(rowNum);
           cell = row.getCell(colNum);
           
-          if(cell.getCellTypeEnum() == CellType.FORMULA)
+          if(cell.getCellTypeEnum() == CellType.STRING)
               return cell.getStringCellValue();
-          else if(cell.getCellTypeEnum() == CellType.NUMERIC || cell.getCellTypeEnum() == CellType.FORMULA)
+          else if(cell.getCellTypeEnum() == CellType.NUMERIC || cell.getCellTypeEnum() == CellType.STRING)
           {
               String cellValue  = String.valueOf(cell.getNumericCellValue());
               if (HSSFDateUtil.isCellDateFormatted(cell))
