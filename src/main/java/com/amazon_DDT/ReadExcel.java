@@ -1,10 +1,5 @@
 package com.amazon_DDT;
 
-import org.testng.annotations.Test;
-import org.yaml.snakeyaml.scanner.Constant;
-import org.testng.annotations.BeforeClass;
-import com.amazon_DDT.Constant_details;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -14,14 +9,16 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.apache.poi.hssf.usermodel.HSSFDateUtil;
+import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row.MissingCellPolicy;
-import org.apache.poi.xssf.eventusermodel.XSSFSheetXMLHandler;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.testng.annotations.AfterClass;
+
+
+
 
 public class ReadExcel {
 	public static FileInputStream excelFile=null;
@@ -99,7 +96,8 @@ public int getColumnCount(String sheetName)
           excelSheet = WB.getSheet(sheetName);
           row = excelSheet.getRow(rowNum);
           cell = row.getCell(colNum);
-          if(cell.getCellTypeEnum() == CellType.STRING)
+          
+          if(cell.getCellTypeEnum() == CellType.FORMULA)
               return cell.getStringCellValue();
           else if(cell.getCellTypeEnum() == CellType.NUMERIC || cell.getCellTypeEnum() == CellType.FORMULA)
           {

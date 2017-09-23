@@ -2,18 +2,15 @@ package amazon_DDT_test;
 
 import java.io.IOException;
 
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-
-import com.amazon_DDT.*;
-
-
+import com.amazon_DDT.Amazon_Homepage;
+import com.amazon_DDT.Base_DDT;
 public class DDT_test extends Base_DDT
 {
 
 	
-	@Test(dataProvider="getDataSign")
+	@Test(dataProvider="getDataSign",dataProviderClass=Base_DDT.class)
 	public void basePageNavigation(String userName, String password) throws IOException
 	{
 		System.out.println(userName);
