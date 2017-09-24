@@ -42,14 +42,14 @@ public class ReadExcel {
 		WB= new XSSFWorkbook(excelFile);
 		excelFile.close();
 	}
-	public static void main(String[] args) throws Exception {
-		Object[][] object = testData("TestData.xlsx", "Sheet1");
-		System.out.println("######  Inside Main Class  #######");
-		for (Object[] objects : object) {
-			Map<String, String> map=(Map<String, String>) objects[0];
-			System.out.println(map);
-		}
-	}
+//	public static void main(String[] args) throws Exception {
+//		Object[][] object = testData("TestData.xlsx", "Sheet1");
+//		System.out.println("######  Inside Main Class  #######");
+//		for (Object[] objects : object) {
+//			Map<String, String> map=(Map<String, String>) objects[0];
+//			System.out.println(map);
+//		}
+//	}
   public static Object[][] testData(String Path, String SheetName) throws Exception
   {
 	  try {
@@ -149,25 +149,7 @@ public class ReadExcel {
   
   }
 
-private static ArrayList<String> getcolNames(String sheetName) {
-	// TODO Auto-generated method stub
-	  excelSheet = WB.getSheet(sheetName);
-      row = excelSheet.getRow(0);
-      ArrayList<String> columnNames=null;
-      
-//      cell.getSheet().getRow(0).getCell(currentcellIndex)
-//      .getRichStringCellValue().toString()
-      
-    	  for(int j=0;j<ReadExcel.getColumnCount(sheetName);j++)
-    	  {
-    		  XSSFCell columncell = row.getCell(j);
-    		  //columnNames= columncell.
-    	  }
-      
-      //columnNames= row.getCell(0).getRichStringCellValue().toString().to;
-	  
-	return columnNames;
-}
+
 public int getRowCount(String sheetName) {
 	
 	  System.out.println(WB);

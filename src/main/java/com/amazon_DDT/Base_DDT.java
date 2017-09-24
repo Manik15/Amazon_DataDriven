@@ -15,9 +15,9 @@ import org.testng.annotations.DataProvider;
 
 public class Base_DDT {
 
-	 public WebDriver driver;
+	 public static WebDriver driver;
 	 //public String baseURL="https://www.amazon.co.in";
-	public WebDriver initialize() throws IOException
+	public static WebDriver initialize() throws IOException
 	{
 		Properties prop= new Properties();
 		
@@ -51,7 +51,7 @@ public class Base_DDT {
 	}
 	
 	@DataProvider
-	public Object[][] getDataSign() throws Exception
+	public Object[][] getData() throws Exception
 	{
 		// Row stands for how many different data types test should run
 		//coloumn stands for how many values per each test

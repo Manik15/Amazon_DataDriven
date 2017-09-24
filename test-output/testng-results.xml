@@ -1,46 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="32795" started-at="2017-09-23T18:16:32Z" finished-at="2017-09-23T18:17:05Z">
+  <suite name="Default suite" duration-ms="76642" started-at="2017-09-24T15:43:44Z" finished-at="2017-09-24T15:45:01Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="32795" started-at="2017-09-23T18:16:32Z" finished-at="2017-09-23T18:17:05Z">
-      <class name="amazon_DDT_test.DDT_test">
-        <test-method status="PASS" signature="basePageNavigation(java.util.Map)[pri:0, instance:amazon_DDT_test.DDT_test@9838eb]" name="basePageNavigation" duration-ms="12434" started-at="2017-09-23T23:46:33Z" data-provider="getDataSign" finished-at="2017-09-23T23:46:45Z">
+    <test name="Default test" duration-ms="76642" started-at="2017-09-24T15:43:44Z" finished-at="2017-09-24T15:45:01Z">
+      <class name="com.amazon_DDT_test.DDT_test">
+        <test-method status="PASS" signature="basePageNavigation(java.util.Map)[pri:0, instance:com.amazon_DDT_test.DDT_test@4f7d0008]" name="basePageNavigation" duration-ms="75799" started-at="2017-09-24T21:13:45Z" data-provider="getData" finished-at="2017-09-24T21:15:01Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Product=A, Username=appumuv@gmail.com, Password=Anushka19915}]]>
+                <![CDATA[{Product=Noise Grey Knitted Slouchy Beanie, Quantity=2.0, location=Cognizant, Username=appumuv@gmail.com, Password=Anushka19915}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- basePageNavigation -->
-        <test-method status="PASS" signature="basePageNavigation(java.util.Map)[pri:0, instance:amazon_DDT_test.DDT_test@9838eb]" name="basePageNavigation" duration-ms="9831" started-at="2017-09-23T23:46:45Z" data-provider="getDataSign" finished-at="2017-09-23T23:46:55Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{Product=B, Username=abc@abc.com, Password=abc}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- basePageNavigation -->
-        <test-method status="PASS" signature="basePageNavigation(java.util.Map)[pri:0, instance:amazon_DDT_test.DDT_test@9838eb]" name="basePageNavigation" duration-ms="9806" started-at="2017-09-23T23:46:55Z" data-provider="getDataSign" finished-at="2017-09-23T23:47:05Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{Product=C, Username=123@113.com, Password=123}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- basePageNavigation -->
-      </class> <!-- amazon_DDT_test.DDT_test -->
+      </class> <!-- com.amazon_DDT_test.DDT_test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
