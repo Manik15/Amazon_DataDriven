@@ -203,8 +203,9 @@ public class Amazon_Homepage {
 		
 		//replaceAll("[-+.^:,0]","");
 		searchItems(productName);
-		
-		WebElement oS= driver.findElement(By.xpath("//span[text()='"+operSys+"']"));
+		By byOperSys=By.xpath("//span[text()='"+operSys+"']");
+		CommonUtitity.waitForElementToBeClickable(driver, byOperSys);
+		WebElement oS= driver.findElement(byOperSys);
 		CommonUtitity.waitForElementToBeClickable(driver, oS);
 		oS.click();
 		CommonUtitity.waitForElementToBeClickable(driver, lowPrice);

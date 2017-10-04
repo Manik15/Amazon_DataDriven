@@ -3,6 +3,7 @@ package com.amazon_DDT;
 import java.util.Iterator;
 import java.util.Set;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -22,6 +23,12 @@ public class CommonUtitity {
 	{
 		WebDriverWait wd = new WebDriverWait(driver, 10);
 		wd.until(ExpectedConditions.elementToBeClickable(we));
+	}
+	
+	public static void waitForElementToBeClickable(WebDriver driver, By by) 
+	{
+		WebDriverWait wd = new WebDriverWait(driver, 10);
+		wd.until(ExpectedConditions.elementToBeClickable(by));
 	}
 	
 	public static void clickByJavaScriptExecutor(WebDriver driver1,WebElement element) 

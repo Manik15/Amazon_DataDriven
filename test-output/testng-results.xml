@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
   <suite name="Default suite" duration-ms="32810" started-at="2017-10-04T18:49:49Z" finished-at="2017-10-04T18:50:21Z">
     <groups>
     </groups>
     <test name="Default test" duration-ms="32810" started-at="2017-10-04T18:49:49Z" finished-at="2017-10-04T18:50:21Z">
       <class name="com.amazon_DDT_test.DDT_test">
         <test-method status="FAIL" signature="basePageNavigation(java.util.Map)[pri:0, instance:com.amazon_DDT_test.DDT_test@4f7d0008]" name="basePageNavigation" duration-ms="31897" started-at="2017-10-05T00:19:49Z" data-provider="getData" finished-at="2017-10-05T00:20:21Z">
+=======
+  <suite name="Default suite" duration-ms="24127" started-at="2017-10-04T18:47:37Z" finished-at="2017-10-04T18:48:02Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="24127" started-at="2017-10-04T18:47:37Z" finished-at="2017-10-04T18:48:02Z">
+      <class name="com.amazon_DDT_test.DDT_test">
+        <test-method status="PASS" signature="basePageNavigation(java.util.Map)[pri:0, instance:com.amazon_DDT_test.DDT_test@9838eb]" name="basePageNavigation" duration-ms="23149" started-at="2017-10-05T00:17:38Z" data-provider="getData" finished-at="2017-10-05T00:18:02Z">
+>>>>>>> bc871f1fe274c6ed1f962d82b6dac6223fed1ff4
           <params>
             <param index="0">
               <value>
@@ -15,6 +24,7 @@
               </value>
             </param>
           </params>
+<<<<<<< HEAD
           <exception class="org.openqa.selenium.WebDriverException">
             <message>
               <![CDATA[unknown error: Element is not clickable at point (73, 660)
@@ -76,6 +86,8 @@ Session ID: 14ce490efdd2bef55058edb2aa14fc03
 ]]>
             </full-stacktrace>
           </exception> <!-- org.openqa.selenium.WebDriverException -->
+=======
+>>>>>>> bc871f1fe274c6ed1f962d82b6dac6223fed1ff4
           <reporter-output>
           </reporter-output>
         </test-method> <!-- basePageNavigation -->

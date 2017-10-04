@@ -2,6 +2,7 @@ package com.amazon.practise;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -26,7 +27,8 @@ public class TestAddress extends Base_DDT {
 		
 		String userName= "appumuv@gmail.com";
 		String password= "Anushka19915";
-		Amazon_Homepage cu= new Amazon_Homepage(driver);
+		Map<String, String> map = null;
+		Amazon_Homepage cu= new Amazon_Homepage(driver,map);
 		cu.userSignIn(userName, password);
 		//Amazon_Homepage.userSignIn(userName, password);
 		driver.findElement(By.xpath("//div[@id='contextualIngressPtLabel_deliveryShortLine']")).click();
