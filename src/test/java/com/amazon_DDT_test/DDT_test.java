@@ -39,7 +39,7 @@ public class DDT_test extends Base_DDT
 		System.out.println(minPrice);
 		System.out.println(maxPrice);
 		
-		Amazon_Homepage aH= new Amazon_Homepage(driver);
+		Amazon_Homepage aH= new Amazon_Homepage(driver,map);
 		//cus driver has to go the constructor
 		
 //		aH.userSignIn(userName,password);
@@ -48,7 +48,7 @@ public class DDT_test extends Base_DDT
 //		
 //		aH.selectAddress(deliveryAddress);
 		
-		aH.selectAndSearchGenericItems(prodName, operatingSystem, minPrice, maxPrice, num);
+		aH.selectAndSearchGenericItems();
 		
 		
 	}

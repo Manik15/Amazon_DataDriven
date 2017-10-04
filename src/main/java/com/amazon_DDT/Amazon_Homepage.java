@@ -2,33 +2,29 @@ package com.amazon_DDT;
 
 
 
-import java.awt.RenderingHints.Key;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
+import java.util.Map;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
 
 public class Amazon_Homepage {
 
-	public static WebDriver driver;
+	public WebDriver driver;
+	private Map<String, String> map;
 	
-	public Amazon_Homepage(WebDriver driver) {
+	public Amazon_Homepage(WebDriver driver, Map<String, String> map) {
 		// TODO Auto-generated constructor stub
 		this.driver= driver;
+		this.map=map;
 		PageFactory.initElements(driver,this);
 	}
 	
@@ -136,7 +132,7 @@ public class Amazon_Homepage {
 		submit.click();
 	}
 	
-	public static void searchItems(String productName)
+	public  void searchItems(String productName)
 	{
 		//Actions actions= new Actions(driver);
 		searchItem.sendKeys(productName);
@@ -186,20 +182,17 @@ public class Amazon_Homepage {
 		
 	}
 	
-	public  void selectAndSearchGenericItems(String productName, String operatingSystem, String minPrice, String maxPrice, String num) throws InterruptedException
-	{
-		
-		Amazon_Homepage.searchItems(productName);
-		WebElement oS= driver.findElement(By.xpath("//span[text()='"+operatingSystem+"']"));
-		
+	public  void selectAndSearchGenericItems() throws InterruptedException{
+		String productName=map.get("Product");
+		String minPrice=map.get("Min Price");
+		String maxPrice=map.get("Max Price");
+		searchItems(productName);
+		WebElement oS= driver.findElement(By.xpath("//span[text()='"+productName+"']"));
 		oS.click();
-		
 		CommonUtitity.waitForElementToBeClickable(driver, lowPrice);
 		lowPrice.sendKeys(minPrice);
 		highPrice.sendKeys(maxPrice);
-		
 		gO.click();
-		
 		WebElement div=driver.findElement(By.xpath("//a[@class='a-link-normal s-access-detail-page  s-color-twister-title-link a-text-normal']"));
 		
 		CommonUtitity.waitForElementToBeClickable(driver, div);
