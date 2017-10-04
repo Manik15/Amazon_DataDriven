@@ -16,6 +16,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.amazon.constants.CommonConstants;
+
 public class Amazon_Homepage {
 
 	public WebDriver driver;
@@ -131,7 +133,10 @@ public class Amazon_Homepage {
 		//driver.findElement(By.xpath("//input[@id='signInSubmit']")).click();
 		submit.click();
 	}
-	
+	/**
+	 * @author Manikantan
+	 * @param productName
+	 */
 	public  void searchItems(String productName)
 	{
 		//Actions actions= new Actions(driver);
@@ -183,11 +188,24 @@ public class Amazon_Homepage {
 	}
 	
 	public  void selectAndSearchGenericItems() throws InterruptedException{
-		String productName=map.get("Product");
-		String minPrice=map.get("Min Price");
-		String maxPrice=map.get("Max Price");
+		String productName=map.get(CommonConstants.PRODNAME);
+		String minPrice=map.get(CommonConstants.MAX_PRICE);
+		String maxPrice=map.get(CommonConstants.MIN_PRICE);
+		String operSys= map.get(CommonConstants.OPERATING_SYS);
+		
+//		System.out.println(userName+" > "+password);
+//		System.out.println(quantityOfProd);
+//		System.out.println(deliveryAddress);
+		System.out.println(operSys);
+		System.out.println(minPrice);
+		System.out.println(maxPrice);
+		System.out.println(operSys);
+		
+		//replaceAll("[-+.^:,0]","");
 		searchItems(productName);
-		WebElement oS= driver.findElement(By.xpath("//span[text()='"+productName+"']"));
+		
+		WebElement oS= driver.findElement(By.xpath("//span[text()='"+operSys+"']"));
+		CommonUtitity.waitForElementToBeClickable(driver, oS);
 		oS.click();
 		CommonUtitity.waitForElementToBeClickable(driver, lowPrice);
 		lowPrice.sendKeys(minPrice);
