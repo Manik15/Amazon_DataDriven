@@ -24,7 +24,7 @@ import org.testng.annotations.Test;
 
 public class Amazon_Homepage {
 
-	public WebDriver driver;
+	public static WebDriver driver;
 	
 	public Amazon_Homepage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
@@ -84,6 +84,24 @@ public class Amazon_Homepage {
 	static
 	WebElement addClose;
 	
+	//selectAndSearchGenericItems
+	
+	
+	@FindBy(xpath="//input[@name='low-price']")
+	static
+	WebElement lowPrice;
+	
+	@FindBy(xpath="//input[@name='high-price']")
+	static
+	WebElement highPrice;
+	
+//	@FindBy(xpath="(//div[@id='leftNavContainer']/ul[@class='a-unordered-list a-nostyle a-vertical a-spacing-base']/div[@class='a-row a-expander-container a-expander-extend-container'])[4]")
+//	WebElement oS;
+	
+	@FindBy(xpath="//input[@value='Go' and @class='a-button-input']")
+	static
+	WebElement gO;
+	
 	String ChildID;
 	
 	
@@ -118,11 +136,20 @@ public class Amazon_Homepage {
 		submit.click();
 	}
 	
+	public static void searchItems(String productName)
+	{
+		//Actions actions= new Actions(driver);
+		searchItem.sendKeys(productName);
+		searchItem.sendKeys(Keys.ENTER);
+		
+	}
+	
+	
 	public void searchAndselectProduct(String productName ) throws InterruptedException
 	{
 		Actions actions= new Actions(driver);
-		searchItem.sendKeys(productName);
-		searchItem.sendKeys(Keys.ENTER);
+//		searchItem.sendKeys(productName);
+//		searchItem.sendKeys(Keys.ENTER);
 //		WebDriverWait wd= new WebDriverWait(driver, 5);
 //		wd.until(ExpectedConditions.visibilityOf(visiblityOfItem));
 //		itemClickable.click();
@@ -135,7 +162,7 @@ public class Amazon_Homepage {
 		//h2[text()='Noise Grey Knitted Slouchy Beanie winter woolen cap']
 		WebDriverWait wait = new WebDriverWait(driver, 20); //Wait time of 20 seconds
 		
-		
+		//listofItems.get(0).
 		//System.out.println(listofItems);
 		for(int i=0;i<listofItems.size();i++)
 		{
@@ -159,6 +186,38 @@ public class Amazon_Homepage {
 		
 	}
 	
+	public  void selectAndSearchGenericItems(String productName, String operatingSystem, String minPrice, String maxPrice, String num) throws InterruptedException
+	{
+		
+		Amazon_Homepage.searchItems(productName);
+		WebElement oS= driver.findElement(By.xpath("//span[text()='"+operatingSystem+"']"));
+		
+		oS.click();
+		
+		CommonUtitity.waitForElementToBeClickable(driver, lowPrice);
+		lowPrice.sendKeys(minPrice);
+		highPrice.sendKeys(maxPrice);
+		
+		gO.click();
+		
+		WebElement div=driver.findElement(By.xpath("//a[@class='a-link-normal s-access-detail-page  s-color-twister-title-link a-text-normal']"));
+		
+		CommonUtitity.waitForElementToBeClickable(driver, div);
+		//Thread.sleep(5000);
+		
+		
+		Actions A= new Actions(driver);
+		A.moveToElement(div).click().build().perform();;
+		//div.click();
+		//CommonUtitity.clickByJavaScriptExecutor(driver, div);
+		
+		
+		
+		
+		
+		
+		
+	}
 		
 	
 	

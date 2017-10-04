@@ -35,13 +35,8 @@ public class ReadExcel {
 	
 	
 	
-	public ReadExcel( String Path) throws IOException
-	{
-		this.Path= Path;
-		excelFile= new FileInputStream(Path);
-		WB= new XSSFWorkbook(excelFile);
-		excelFile.close();
-	}
+
+//	}
 //	public static void main(String[] args) throws Exception {
 //		Object[][] object = testData("TestData.xlsx", "Sheet1");
 //		System.out.println("######  Inside Main Class  #######");
@@ -53,12 +48,17 @@ public class ReadExcel {
   public static Object[][] testData(String Path, String SheetName) throws Exception
   {
 	  try {
-		  ReadExcel re= new ReadExcel(Path);
+		  
+		  excelFile= new FileInputStream(Path);
+		  WB= new XSSFWorkbook(excelFile);
+		  excelFile.close();
+		  
+		  //ReadExcel re= new ReadExcel(Path);
 		  excelSheet = WB.getSheet(SheetName);
 		  System.out.println(Path);
 		  Object[][] excelData=null;
-		  int rowNUM= re.getRowCount(SheetName);
-		  int colNUM= re.getColumnCount(SheetName);
+		  int rowNUM= ReadExcel.getRowCount(SheetName);
+		  int colNUM= ReadExcel.getColumnCount(SheetName);
 		  ArrayList<String> colNames=null;
 		  
 		  System.out.println("rowNUM"+rowNUM);
@@ -150,7 +150,7 @@ public class ReadExcel {
   }
 
 
-public int getRowCount(String sheetName) {
+public static int getRowCount(String sheetName) {
 	
 	  System.out.println(WB);
 	  excelSheet= WB.getSheet(sheetName);
