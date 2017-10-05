@@ -6,6 +6,7 @@ import java.util.Map;
 import org.testng.annotations.Test;
 
 import com.amazon.constants.CommonConstants;
+import com.amazon_DDT.Amazon_HomePage_CSS;
 import com.amazon_DDT.Amazon_Homepage;
 import com.amazon_DDT.Base_DDT;
 public class DDT_test extends Base_DDT
@@ -35,7 +36,11 @@ public class DDT_test extends Base_DDT
 		
 		
 		
-		Amazon_Homepage aH= new Amazon_Homepage(driver,map);
+		//Amazon_Homepage aH= new Amazon_Homepage(driver,map);
+		
+		Amazon_HomePage_CSS home= new Amazon_HomePage_CSS(driver, map);
+		home.selectLocation("Brazil");
+		
 		//cus driver has to go the constructor
 		
 //		aH.userSignIn(userName,password);
@@ -44,7 +49,7 @@ public class DDT_test extends Base_DDT
 //		
 //		aH.selectAddress(deliveryAddress);
 		
-		aH.selectAndSearchGenericItems();
+		//aH.selectAndSearchGenericItems();
 		
 		
 	}

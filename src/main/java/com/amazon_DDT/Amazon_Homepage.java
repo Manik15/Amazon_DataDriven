@@ -193,6 +193,8 @@ public class Amazon_Homepage {
 		String maxPrice=map.get(CommonConstants.MIN_PRICE);
 		String operSys= map.get(CommonConstants.OPERATING_SYS);
 		
+		//map.put
+		
 //		System.out.println(userName+" > "+password);
 //		System.out.println(quantityOfProd);
 //		System.out.println(deliveryAddress);
@@ -207,7 +209,8 @@ public class Amazon_Homepage {
 		CommonUtitity.waitForElementToBeClickable(driver, byOperSys);
 		WebElement oS= driver.findElement(byOperSys);
 		CommonUtitity.waitForElementToBeClickable(driver, oS);
-		oS.click();
+		CommonUtitity.clickByJavaScriptExecutor(driver, oS);
+		//oS.click();
 		CommonUtitity.waitForElementToBeClickable(driver, lowPrice);
 		lowPrice.sendKeys(minPrice);
 		highPrice.sendKeys(maxPrice);
@@ -217,9 +220,10 @@ public class Amazon_Homepage {
 		CommonUtitity.waitForElementToBeClickable(driver, div);
 		//Thread.sleep(5000);
 		
+		CommonUtitity.clickByActionMethod(driver, div);
 		
-		Actions A= new Actions(driver);
-		A.moveToElement(div).click().build().perform();;
+//		Actions A= new Actions(driver);
+//		A.moveToElement(div).click().build().perform();;
 		//div.click();
 		//CommonUtitity.clickByJavaScriptExecutor(driver, div);
 		
