@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.amazon_DDT_test.DDT_test">
+      <class name="com.test.irc.TestClassIrc">
         <methods>
-          <include name="basePageNavigation" invocation-numbers="0"/>
+          <include name="basePageNavigate"/>
         </methods>
-      </class> <!-- com.amazon_DDT_test.DDT_test -->
+      </class> <!-- com.test.irc.TestClassIrc -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
